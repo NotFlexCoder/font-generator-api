@@ -1,2 +1,2 @@
 flask 
-fancy-text
+fancytext
