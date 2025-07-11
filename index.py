@@ -45,40 +45,7 @@ def generate_fonts():
             "ɐqɔpǝɟƃɥᴉɾʞʅɯuodbɹsʇnʌʍxʎz∀𐐒ƆᗡƎℲפHIſʞ⅃WNOԀQᴚS┴∩ΛMXʎZ'˙¡¿)(][}{"
         )),
         "squiggle": ''.join(chr(0x1D4D0 + ord(c) - 65) if c.isupper() else
-                            chr(0x1D4EA + ord(c) - 97) if c.islower() else c for c in text),
-        "squared": ''.join(chr(0x1F130 + ord(c) - 65) if c.isupper() and 65 <= ord(c) <= 90 else c for c in text),
-        "fullwidth_upper": ''.join(chr(0xFF21 + ord(c) - 65) if c.isupper() else c for c in text),
-        "reverse": text[::-1],
-        "tiny": ''.join({
-            'a': 'ᵃ', 'b': 'ᵇ', 'c': 'ᶜ', 'd': 'ᵈ', 'e': 'ᵉ', 'f': 'ᶠ', 'g': 'ᵍ',
-            'h': 'ʰ', 'i': 'ᶦ', 'j': 'ʲ', 'k': 'ᵏ', 'l': 'ˡ', 'm': 'ᵐ', 'n': 'ⁿ',
-            'o': 'ᵒ', 'p': 'ᵖ', 'q': 'ᑫ', 'r': 'ʳ', 's': 'ˢ', 't': 'ᵗ', 'u': 'ᵘ',
-            'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ'
-        }.get(c, c) for c in text.lower()),
-        "underline": ''.join(c + '\u0332' for c in text),
-        "strikethrough": ''.join(c + '\u0336' for c in text),
-        "parenthesized": ''.join(chr(0x1F110 + ord(c) - 65) if c.isupper() and 65 <= ord(c) <= 90 else c for c in text),
-        "superscript": ''.join({
-            '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
-            '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
-            'a': 'ᵃ', 'b': 'ᵇ', 'c': 'ᶜ', 'd': 'ᵈ', 'e': 'ᵉ',
-            'f': 'ᶠ', 'g': 'ᵍ', 'h': 'ʰ', 'i': 'ⁱ', 'j': 'ʲ',
-            'k': 'ᵏ', 'l': 'ˡ', 'm': 'ᵐ', 'n': 'ⁿ', 'o': 'ᵒ',
-            'p': 'ᵖ', 'q': 'ᑫ', 'r': 'ʳ', 's': 'ˢ', 't': 'ᵗ',
-            'u': 'ᵘ', 'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ'
-        }.get(c.lower(), c) for c in text),
-        "subscript": ''.join({
-            '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
-            '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
-            'a': 'ₐ', 'e': 'ₑ', 'h': 'ₕ', 'i': 'ᵢ', 'j': 'ⱼ',
-            'k': 'ₖ', 'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ', 'o': 'ₒ',
-            'p': 'ₚ', 'r': 'ᵣ', 's': 'ₛ', 't': 'ₜ', 'u': 'ᵤ',
-            'v': 'ᵥ', 'x': 'ₓ'
-        }.get(c.lower(), c) for c in text),
-        "mirror": text[::-1].translate(str.maketrans(
-            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-            "zʎxʍʌnʇsɹbdouɯʃʞᴉɥƃɟǝpɔqɐZ⅄XＭΛ∩⊥SᴚὉՈWИOИM⅃ʞIH⅁ℲƎᗡƆ𐐒∀➊➋➌➍➎➏➐➑➒"
-        ))
+                            chr(0x1D4EA + ord(c) - 97) if c.islower() else c for c in text)
     }
 
     return jsonify(result)
